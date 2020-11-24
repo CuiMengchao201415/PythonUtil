@@ -43,6 +43,7 @@ class MySqlUtil():
         if sql:
             cursor = self.conn.cursor()
             cursor.execute(sql)
+            self.conn.commit()
             cursor.close()
             return 'success'
         else:

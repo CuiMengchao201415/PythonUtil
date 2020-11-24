@@ -42,7 +42,7 @@ class DateTimeUtil():
 
 if __name__ == '__main__':
     dtu = DateTimeUtil()
-    result = dtu.datetime2timeStamp('2020-10-25 00:00:00')
-    result = dtu.timeStamp2datetime(result)
+    result = dtu.datetime2timeStamp('2020-11-14 23:59:59')
+    # result = dtu.timeStamp2datetime(result)
     # result = dtu.timeStamp2date()
     print(result)
