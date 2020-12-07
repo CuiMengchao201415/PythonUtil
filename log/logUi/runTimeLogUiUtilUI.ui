@@ -1,0 +1,128 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<ui version="4.0">
+ <class>Form</class>
+ <widget class="QWidget" name="Form">
+  <property name="geometry">
+   <rect>
+    <x>0</x>
+    <y>0</y>
+    <width>763</width>
+    <height>597</height>
+   </rect>
+  </property>
+  <property name="windowTitle">
+   <string>Form</string>
+  </property>
+  <widget class="QTextEdit" name="runLog_TE">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>40</y>
+     <width>351</width>
+     <height>541</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="exceptLog_TE">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>40</y>
+     <width>351</width>
+     <height>541</height>
+    </rect>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="readRunLog_PB">
+   <property name="geometry">
+    <rect>
+     <x>220</x>
+     <y>10</y>
+     <width>151</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>读取全部运行日志</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>10</y>
+     <width>81</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>运行日志</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_2">
+   <property name="geometry">
+    <rect>
+     <x>380</x>
+     <y>10</y>
+     <width>81</width>
+     <height>16</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>异常日志</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="readExceptLog_PB">
+   <property name="geometry">
+    <rect>
+     <x>580</x>
+     <y>10</y>
+     <width>151</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>读取全部异常日志</string>
+   </property>
+  </widget>
+ </widget>
+ <resources/>
+ <connections>
+  <connection>
+   <sender>readRunLog_PB</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>readRunLog()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>236</x>
+     <y>21</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>190</x>
+     <y>23</y>
+    </hint>
+   </hints>
+  </connection>
+  <connection>
+   <sender>readExceptLog_PB</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>readExceptLog()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>614</x>
+     <y>16</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>548</x>
+     <y>21</y>
+    </hint>
+   </hints>
+  </connection>
+ </connections>
+ <slots>
+  <slot>readRunLog()</slot>
+  <slot>readExceptLog()</slot>
+ </slots>
+</ui>
