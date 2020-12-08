@@ -6,8 +6,8 @@
    <rect>
     <x>0</x>
     <y>0</y>
-    <width>763</width>
-    <height>597</height>
+    <width>953</width>
+    <height>736</height>
    </rect>
   </property>
   <property name="windowTitle">
@@ -17,27 +17,27 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>40</y>
-     <width>351</width>
-     <height>541</height>
+     <y>370</y>
+     <width>431</width>
+     <height>311</height>
     </rect>
    </property>
   </widget>
   <widget class="QTextEdit" name="exceptLog_TE">
    <property name="geometry">
     <rect>
-     <x>380</x>
-     <y>40</y>
-     <width>351</width>
-     <height>541</height>
+     <x>470</x>
+     <y>370</y>
+     <width>451</width>
+     <height>311</height>
     </rect>
    </property>
   </widget>
   <widget class="QPushButton" name="readRunLog_PB">
    <property name="geometry">
     <rect>
-     <x>220</x>
-     <y>10</y>
+     <x>300</x>
+     <y>330</y>
      <width>151</width>
      <height>28</height>
     </rect>
@@ -50,7 +50,7 @@
    <property name="geometry">
     <rect>
      <x>20</x>
-     <y>10</y>
+     <y>340</y>
      <width>81</width>
      <height>16</height>
     </rect>
@@ -62,8 +62,8 @@
   <widget class="QLabel" name="label_2">
    <property name="geometry">
     <rect>
-     <x>380</x>
-     <y>10</y>
+     <x>470</x>
+     <y>340</y>
      <width>81</width>
      <height>16</height>
     </rect>
@@ -75,14 +75,50 @@
   <widget class="QPushButton" name="readExceptLog_PB">
    <property name="geometry">
     <rect>
-     <x>580</x>
-     <y>10</y>
+     <x>770</x>
+     <y>330</y>
      <width>151</width>
      <height>28</height>
     </rect>
    </property>
    <property name="text">
     <string>读取全部异常日志</string>
+   </property>
+  </widget>
+  <widget class="QLabel" name="label_3">
+   <property name="geometry">
+    <rect>
+     <x>30</x>
+     <y>20</y>
+     <width>72</width>
+     <height>15</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>临时日志</string>
+   </property>
+  </widget>
+  <widget class="QPushButton" name="readTempLog_PB">
+   <property name="geometry">
+    <rect>
+     <x>770</x>
+     <y>10</y>
+     <width>141</width>
+     <height>28</height>
+    </rect>
+   </property>
+   <property name="text">
+    <string>读取全部临时日志</string>
+   </property>
+  </widget>
+  <widget class="QTextEdit" name="tempLog_TE">
+   <property name="geometry">
+    <rect>
+     <x>20</x>
+     <y>50</y>
+     <width>901</width>
+     <height>271</height>
+    </rect>
    </property>
   </widget>
  </widget>
@@ -95,8 +131,8 @@
    <slot>readRunLog()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>236</x>
-     <y>21</y>
+     <x>316</x>
+     <y>341</y>
     </hint>
     <hint type="destinationlabel">
      <x>190</x>
@@ -111,8 +147,8 @@
    <slot>readExceptLog()</slot>
    <hints>
     <hint type="sourcelabel">
-     <x>614</x>
-     <y>16</y>
+     <x>804</x>
+     <y>336</y>
     </hint>
     <hint type="destinationlabel">
      <x>548</x>
@@ -120,9 +156,26 @@
     </hint>
    </hints>
   </connection>
+  <connection>
+   <sender>readTempLog_PB</sender>
+   <signal>clicked()</signal>
+   <receiver>Form</receiver>
+   <slot>readTempLog()</slot>
+   <hints>
+    <hint type="sourcelabel">
+     <x>887</x>
+     <y>24</y>
+    </hint>
+    <hint type="destinationlabel">
+     <x>929</x>
+     <y>26</y>
+    </hint>
+   </hints>
+  </connection>
  </connections>
  <slots>
   <slot>readRunLog()</slot>
   <slot>readExceptLog()</slot>
+  <slot>readTempLog()</slot>
  </slots>
 </ui>

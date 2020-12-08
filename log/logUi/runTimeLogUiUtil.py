@@ -127,6 +127,7 @@ class RunTimeLogUiUtil(Ui_Form):
             log = f'{self.getDateTime(timeType)}\t{msg}\n'
             with open(file, 'a+') as fp:
                 fp.write(log)
+            self.tempLog_TE.append(log)
 
             if event:
                 self.executeEvent(event)
@@ -201,6 +202,16 @@ class RunTimeLogUiUtil(Ui_Form):
             return True
         except:
             return False
+
+    def readTempLog(self):
+        try:
+            file = self.tempLogFile
+
+            with open(file, 'r') as fp:
+                log = fp.read()
+            self.tempLog_TE.setText(log)
+        except Exception as e:
+            self.exceptFileLog(f'临时日志读取出错，错误原因：{e}')
 
     def readRunLog(self):
         try:
