@@ -32,6 +32,7 @@ class MySqlUtil():
 
     def createtable(self, sql):
         if sql:
+            self.conn.ping(reconnect=True)
             cursor = self.conn.cursor(buffered=True)
             cursor.execute(sql)
             cursor.close()
@@ -41,6 +42,7 @@ class MySqlUtil():
 
     def insert(self, sql):
         if sql:
+            self.conn.ping(reconnect=True)
             cursor = self.conn.cursor()
             cursor.execute(sql)
             self.conn.commit()
@@ -56,6 +58,7 @@ class MySqlUtil():
             sql = "delete from %s where id=%d" % (self.prefix+table, id)
         else:
             return 'error'
+        self.conn.ping(reconnect=True)
         cursor = self.conn.cursor()
         cursor.execute(sql)
         self.conn.commit()
@@ -69,6 +72,7 @@ class MySqlUtil():
             sql = "select * from %s" % self.prefix+table
         else:
             return 'error'
+        self.conn.ping(reconnect=True)
         cursor = self.conn.cursor()
         cursor.execute(sql)
         result = cursor.fetchall()
@@ -77,6 +81,7 @@ class MySqlUtil():
 
     def dbselect(self, sql=''):
         try:
+            self.conn.ping(reconnect=True)
             result = pd.read_sql(sql, self.conn)
             return result
         except:
@@ -84,6 +89,7 @@ class MySqlUtil():
 
     def update(self, sql):
         if sql:
+            self.conn.ping(reconnect=True)
             cursor = self.conn.cursor()
             cursor.execute(sql)
             self.conn.commit()
