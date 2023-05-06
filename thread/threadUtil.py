@@ -5,6 +5,8 @@ import inspect
 class ThreadUtil():
     def __init__(self):
         self.thread = ''
+        self.statement()
+
 
     def startThread(self, function):
         """
@@ -36,6 +38,14 @@ class ThreadUtil():
             return "PyThreadState_SetAsyncExc failed"
         else:
             return "thread stop"
+
+    def statement(self):
+        self.statement = f'{self.__class__.__name__}\n' \
+                         '作者: 梦辰雪（Cui Mengchao）\n' \
+                         '版本号: v1.0\n' \
+                         '更新时间: 2021-04-11\n' \
+                         'gitee: https://gitee.com/mcxgitee\n'
+        print(self.statement)
 
 
 if __name__ == '__main__':

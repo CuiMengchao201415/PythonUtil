@@ -11,8 +11,9 @@ class HttpUtil():
             r.raise_for_status()
             r.encoding = r.apparent_encoding
             return r.text
-        except:
-            return ''
+        except Exception as e:
+            print(f'请求{url}失败：{e}')
+            return False
 
     def post(self, path, data={}, timeout=3, headers={}):
         url = self.baseURL + path
